@@ -1,4 +1,4 @@
-package gui;
+package interfaces;
 
 public class Boton {
     
