@@ -1,10 +1,11 @@
-package gui;
+package interfaces;
 
 import logica.OperacionInvalidaException;
 import logica.SistemaMonedero;
 import modelo.Cliente;
 
 import javax.swing.*;
+
 import java.awt.*;
 
 /** Comportamiento comun de todas las pestañas. */

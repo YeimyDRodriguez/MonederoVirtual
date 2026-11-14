@@ -1,8 +1,8 @@
 package app;
 import javax.swing.SwingUtilities;
 
-import gui.VentanaPrincipal;
 import interfaces.Tema;
+import interfaces.VentanaPrincipal;
 import logica.SistemaMonedero;
 
 public class App {
