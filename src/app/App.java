@@ -1,7 +1,9 @@
 package app;
 import javax.swing.SwingUtilities;
 
+import gui.VentanaPrincipal;
 import interfaces.Tema;
+import logica.SistemaMonedero;
 
 public class App {
 	public static void main (String[] args) {
