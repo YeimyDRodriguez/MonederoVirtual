@@ -1,10 +1,11 @@
-package gui;
+package interfaces;
 
 import logica.SistemaMonedero;
 import logica.VerificadorIntegridad;
 import modelo.*;
 
 import javax.swing.*;
+
 import java.awt.*;
 
 /** Historial de transacciones (lista enlazada) y verificacion de integridad (recursiva). */

@@ -1,9 +1,10 @@
-package gui;
+package interfaces;
 
 import logica.SistemaMonedero;
 import modelo.Cliente;
 
 import javax.swing.*;
+
 import java.awt.*;
 
 /** Registrar clientes y ver la lista (ordenada por id gracias al ABB). */
