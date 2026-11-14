@@ -1,7 +1,7 @@
 package app;
 import javax.swing.SwingUtilities;
 
-import gui.Tema;
+import interfaces.Tema;
 
 public class App {
 	public static void main (String[] args) {
