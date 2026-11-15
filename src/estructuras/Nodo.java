@@ -1,16 +1,17 @@
 package estructuras;
-/*
-Nodo génerico que usan la pila y la cola propias, 
-para guardar un dato y una referencia al siguiente nodo.
-*/
-public class Nodo<T> {
 
-    T dato; // Información que guarda el nodo
-    Nodo<T> siguiente; // Flecha que apunta al siguiente nodo
+/**
+ * Lo usan la ListaEnlazada, la Pila, la Cola y la ListaCircular.
+ */
+public class Nodo<T> {
+    T dato;
+    Nodo<T> siguiente;
 
     public Nodo(T dato) {
         this.dato = dato;
         this.siguiente = null;
     }
 
+    public T getDato() { return dato; }
+    public Nodo<T> getSiguiente() { return siguiente; }
 }

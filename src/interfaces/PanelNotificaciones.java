@@ -1,13 +1,13 @@
 package interfaces;
 
+import javax.swing.*;
+
 import logica.SistemaMonedero;
 import modelo.Cliente;
 import modelo.Notificacion;
 
-import javax.swing.*;
 import java.awt.*;
 
-/** Bandeja de notificaciones del cliente (lista circular de capacidad fija). */
 public class PanelNotificaciones extends PanelBase {
     private final TablaSoloLectura tabla = new TablaSoloLectura("Fecha", "Tipo", "Mensaje", "Estado");
     private final JLabel lblInfo = new JLabel();
@@ -30,7 +30,7 @@ public class PanelNotificaciones extends PanelBase {
         bLeer.addActionListener(e -> ejecutar(() -> {
             for (Notificacion n : clienteActual().getNotificaciones()) n.marcarLeida();
         }, null));
-        // siguiente() de la lista circular: al llegar a la ultima vuelve a la primera
+
         bSiguiente.addActionListener(e -> {
             if (clienteActual() == null) return;
             Notificacion n = clienteActual().getNotificaciones().siguiente();
@@ -46,7 +46,6 @@ public class PanelNotificaciones extends PanelBase {
         Cliente c = clienteActual();
         if (c == null) { lblInfo.setText("Selecciona un cliente"); return; }
         txtUmbral.setText(String.valueOf(c.getUmbralSaldoBajo()));
-        // La recorremos de la mas reciente a la mas antigua guardandolas primero en una pila propia
         estructuras.Pila<Notificacion> inversa = new estructuras.Pila<>();
         int noLeidas = 0;
         for (Notificacion n : c.getNotificaciones()) { inversa.apilar(n); if (!n.isLeida()) noLeidas++; }

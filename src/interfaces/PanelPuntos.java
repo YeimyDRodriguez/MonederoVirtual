@@ -1,6 +1,7 @@
 package interfaces;
 
 import modelo.Beneficio;
+import modelo.Cliente;
 import modelo.Rango;
 import modelo.RegistroPuntos;
 

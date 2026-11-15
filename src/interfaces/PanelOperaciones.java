@@ -138,3 +138,4 @@ public class PanelOperaciones extends PanelBase {
                 + c.getReversibles().tamanio() + "</html>");
     }
 }
+
