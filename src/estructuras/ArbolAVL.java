@@ -1,7 +1,4 @@
 package estructuras;
-
-import estructuras.ArbolAVL.NodoAVL;
-
 public class ArbolAVL <K extends Comparable<K>, V> { // clase generica con dos tipos K es la clave V es el valor 
 	private static class NodoAVL <K, V>{ //representa cada caja del arbol
 		K clave; V valor; //cada nodo guarda su clave y su valor 

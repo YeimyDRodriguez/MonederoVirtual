@@ -2,6 +2,8 @@ package app;
 import javax.swing.SwingUtilities;
 
 import interfaces.Tema;
+import interfaces.VentanaPrincipal;
+import logica.SistemaMonedero;
 
 public class App {
 	public static void main (String[] args) {

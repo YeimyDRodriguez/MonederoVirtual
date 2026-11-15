@@ -1,9 +1,10 @@
-package gui;
+package interfaces;
 
 import logica.Reportes;
 import logica.SistemaMonedero;
 
 import javax.swing.*;
+
 import java.awt.*;
 
 /*

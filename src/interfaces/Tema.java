@@ -1,4 +1,4 @@
-package gui;
+package interfaces;
 
 import modelo.Rango;
 
