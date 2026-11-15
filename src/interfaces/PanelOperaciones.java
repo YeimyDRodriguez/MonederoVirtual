@@ -1,8 +1,13 @@
 package interfaces;
 
+import logica.SistemaMonedero;
+import modelo.Cliente;
+import modelo.Transaccion;
+
 import javax.swing.*;
 import java.awt.*;
 
+/** Depositos, retiros, gastos, transferencias, multimonedero y reversion. */
 public class PanelOperaciones extends PanelBase {
     private final JComboBox<String> cmbMonedero = new JComboBox<>();
     private final JTextField txtMonto = new JTextField(10);

@@ -118,14 +118,14 @@ public class GrafoDirigido<T> {
     public boolean tieneCiclo() {
         TablaHash<T, Integer> estado = new TablaHash<>();
         for (T v : vertices)
-            if (estado.obtenerOPorDefecto(v, 0) == 0 && cicloDesde(v, estado)) return true;
+            if (estado.obtenerPorDefecto(v, 0) == 0 && cicloDesde(v, estado)) return true;
         return false;
     }
 
     private boolean cicloDesde(T v, TablaHash<T, Integer> estado) {
         estado.poner(v, 1);
         for (Arista<T> a : aristasDe(v)) {
-            int e = estado.obtenerOPorDefecto(a.destino, 0);
+            int e = estado.obtenerPorDefecto(a.destino, 0);
             if (e == 1) return true;
             if (e == 0 && cicloDesde(a.destino, estado)) return true;
         }

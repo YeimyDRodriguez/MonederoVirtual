@@ -1,8 +1,13 @@
 package interfaces;
 
 import modelo.Beneficio;
+import modelo.Rango;
+import modelo.RegistroPuntos;
 
 import javax.swing.*;
+
+import logica.SistemaMonedero;
+
 import java.awt.*;
 
 public class PanelPuntos extends PanelBase {

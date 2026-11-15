@@ -33,6 +33,12 @@ public class Pila<T> implements Iterable<T> {
         return cima.dato;
     }
 
+    public T verCima() { // peek
+        if (estaVacia())
+            throw new NoSuchElementException("Pila vacia");
+        return cima.dato;
+    }
+
     public boolean estaVacia() { // Devuelve true si la pila está vacía
         return cima == null;
     }
@@ -40,12 +46,14 @@ public class Pila<T> implements Iterable<T> {
     @Override
     public Iterator<T> iterator() {
         return new Iterator<T>() {
-            private Nodo<T> actual = cima; 
+            private Nodo<T> actual = cima;
+
             public boolean hasNext() {
                 return actual != null;
             }
+
             public T next() {
-                T d = actual.dato; 
+                T d = actual.dato;
                 actual = actual.siguiente;
                 return d;
             }

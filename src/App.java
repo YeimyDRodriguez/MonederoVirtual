@@ -1,4 +1,4 @@
-package app;
+
 import javax.swing.SwingUtilities;
 
 import interfaces.Tema;

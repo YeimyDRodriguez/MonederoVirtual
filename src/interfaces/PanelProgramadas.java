@@ -1,6 +1,10 @@
 package interfaces;
 
 import javax.swing.*;
+
+import logica.SistemaMonedero;
+import modelo.TransaccionProgramada;
+
 import java.awt.*;
 import java.time.LocalDate;
 
