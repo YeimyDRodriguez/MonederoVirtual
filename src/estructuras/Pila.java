@@ -3,61 +3,44 @@ package estructuras;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/*
-Pila (LIFO: El ultimo en entrar es el primero en salir) que usa nodos para guardar los datos.
-El uso en el proyecto: transacciones reversibles. Para "deshacer" se saca la ultima transaccion que se hizo, es decir, la cima
-*/
+/**
+ * Uso en el proyecto: transacciones reversibles. Para "deshacer" sacamos
+ * la ultima transaccion que se hizo (la de la cima).
+ */
 public class Pila<T> implements Iterable<T> {
-    private Nodo<T> cima;
+    private Nodo<T> cima; //el nodo de arriba el último que entró
     private int tamanio;
 
-    public void apilar(T dato) { // Mete un dato en la cima de la pila
+    public void apilar(T dato) {          // push
         Nodo<T> nuevo = new Nodo<>(dato);
-        nuevo.siguiente = cima;
-        cima = nuevo;
+        nuevo.siguiente = cima; //el nuevo apunta a la cima actual
+        cima = nuevo; //el nuevo pasa a ser la cima
         tamanio++;
     }
 
-    public T desapilar() { // Saca el dato de la cima de la pila
-        if (estaVacia())
-            throw new NoSuchElementException("La pila está vacía");
+    public T desapilar() {                // pop
+        if (estaVacia()) throw new NoSuchElementException("Pila vacia");
         T dato = cima.dato;
-        cima = cima.siguiente;
+        cima = cima.siguiente; //la cima baja al siguiente nodo
         tamanio--;
         return dato;
     }
 
-    public T cima() { // Devuelve el dato de la cima de la pila sin sacarlo
-        if (estaVacia())
-            throw new NoSuchElementException("La pila está vacía");
+    public T verCima() {                  // peek
+        if (estaVacia()) throw new NoSuchElementException("Pila vacia");
         return cima.dato;
     }
 
-    public T verCima() { // peek
-        if (estaVacia())
-            throw new NoSuchElementException("Pila vacia");
-        return cima.dato;
-    }
+    public boolean estaVacia() { return cima == null; }
+    public int tamanio() { return tamanio; }
 
-    public boolean estaVacia() { // Devuelve true si la pila está vacía
-        return cima == null;
-    }
-
+    /** Recorre desde la cima hacia el fondo. */
     @Override
     public Iterator<T> iterator() {
         return new Iterator<T>() {
             private Nodo<T> actual = cima;
-
-            public boolean hasNext() {
-                return actual != null;
-            }
-
-            public T next() {
-                T d = actual.dato;
-                actual = actual.siguiente;
-                return d;
-            }
+            public boolean hasNext() { return actual != null; }
+            public T next() { T d = actual.dato; actual = actual.siguiente; return d; }
         };
     }
-
 }

@@ -3,6 +3,7 @@ package interfaces;
 import javax.swing.*;
 
 import logica.SistemaMonedero;
+import modelo.Cliente;
 import modelo.TransaccionProgramada;
 
 import java.awt.*;

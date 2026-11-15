@@ -17,7 +17,7 @@ public class Reportes {
         TablaHash<String, Double> suma = new TablaHash<>();
         for (Transaccion t : c.getHistorial())
             if (t.getTipo() == TipoTransaccion.GASTO && !t.isRevertida())
-                suma.poner(t.getCategoria(), suma.obtenerPorDefecto(t.getCategoria(), 0.0) + t.getMonto());
+                suma.poner(t.getCategoria(), suma.obtenerOPorDefecto(t.getCategoria(), 0.0) + t.getMonto());
         ListaEnlazada<String> cats = suma.claves();
         Par<String, Double>[] arr = new Par[cats.tamanio()];
         int i = 0;
@@ -41,7 +41,7 @@ public class Reportes {
         for (Transaccion t : c.getHistorial()) {
             if (t.isRevertida() || !c.getId().equals(t.getTitular())) continue;
             validas++;
-            porTipo.poner(t.getTipo(), porTipo.obtenerPorDefecto(t.getTipo(), 0.0) + t.getMonto());
+            porTipo.poner(t.getTipo(), porTipo.obtenerOPorDefecto(t.getTipo(), 0.0) + t.getMonto());
             comisiones += t.getComision();
         }
         sb.append("-- Movimientos realizados (").append(validas).append(") --\n");
