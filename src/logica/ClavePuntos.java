@@ -1,4 +1,5 @@
 package logica;
+
 public class ClavePuntos implements Comparable<ClavePuntos> {
     private final int puntos;
     private final String id;
